@@ -1,6 +1,6 @@
 const obtenerInfoSites = async () =>{
     return(
-        fetch('http://localhost:3000/infosites')
+        fetch(`${import.meta.env.VITE_BACK}/infosites`)
         .then(response => {
             // network failure, request prevented
             if (response.status >= 200 && response.status < 300) {

@@ -1,6 +1,6 @@
 async function getSiteSnapshot(url){
     return(
-        fetch(`http://localhost:3000/preview`,
+        fetch(`${import.meta.env.VITE_BACK}/preview`,
         {
             method:'POST',
             headers: {

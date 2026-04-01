@@ -1,6 +1,6 @@
 const obtenerInfoFormacion = async () =>{
     return(
-        fetch('http://localhost:3000/infoFormacion')
+        fetch(`${import.meta.env.VITE_BACK}/infoFormacion`)
         .then(response => {
             // network failure, request prevented
             if (response.status >= 200 && response.status < 300) {
