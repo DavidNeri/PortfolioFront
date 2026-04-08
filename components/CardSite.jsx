@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import obtenerInfoSites from '../utils/obtenerInfoSites';
 //import getSiteSnapshot from '../utils/getSiteSnapshot';
 //import getSnapBoltshot from '../services/boltshot';
-import Spinner from './spinner';
+import Spin from './Spin';
 
 const CardSite = () => {   
     const [sitios, setSitios] = useState([]);
