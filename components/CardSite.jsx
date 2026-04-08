@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import obtenerInfoSites from '../utils/obtenerInfoSites';
-import Spinner from './spinner';
+//import Spinner from './spinner';
 //import getSiteSnapshot from '../utils/getSiteSnapshot';
 //import getSnapBoltshot from '../services/boltshot';
 
