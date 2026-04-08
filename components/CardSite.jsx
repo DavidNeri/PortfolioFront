@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import obtenerInfoSites from '../utils/obtenerInfoSites';
-//import Spinner from './spinner';
 //import getSiteSnapshot from '../utils/getSiteSnapshot';
 //import getSnapBoltshot from '../services/boltshot';
+import Spinner from './spinner';
 
 const CardSite = () => {   
     const [sitios, setSitios] = useState([]);
     //const [sitesSnapshots, setSitesSnapshots] = useState('')
-    //const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
         ( async ()=>{
-            const _sitios = await obtenerInfoSites()
-            setSitios(_sitios.sitios)           
-        
+            const _sitios = await obtenerInfoSites()            
+            setSitios(_sitios.sitios)
+            setLoading(false)
         })()       
         
     },[])
