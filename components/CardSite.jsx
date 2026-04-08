@@ -50,28 +50,36 @@ const CardSite = () => {
     }*/
 
     return (
+        
+            
+        
         <>
-            {sitios.map(                            
-                sitio =>(
-                    
-                    <a key={sitio.id} href={sitio.url} target="_blank" rel="noopener noreferrer">
-                        <div className='grid grid-cols-5 mb-1.5 h-40 overflow-hidden rounded-xl'>
-                            <div className='col-span-1 flex h-full bg-gray-300'>
-                                <img src={`/img/sites/${sitio.id}.png`}
-                                    className='max-w-full max-h-full object-contain'
-                                />
-                                        
+        {
+            loading && <Spin /> 
+        }
+            {
+                
+                    sitios.map(                            
+                        sitio =>(                    
+                            <a key={sitio.id} href={sitio.url} target="_blank" rel="noopener noreferrer">
+                                <div className='grid grid-cols-5 mb-1.5 h-40 overflow-hidden rounded-xl'>
+                                    <div className='col-span-1 flex h-full bg-gray-300'>
+                                        <img src={`/img/sites/${sitio.id}.png`}
+                                            className='max-w-full max-h-full object-contain'
+                                        />
+                                                
 
-                            </div>
-                            <div className='bg-linear-to-tr from-indigo-800 to-indigo-500 col-span-4 text-2xl p-10 flex items-center text-justify font-semibold font-sans'>
-                                <p>{sitio.info}</p>
-                            </div>                
-                        </div>
-                    </a>        
-                    
-                    
-                )
-            )}
+                                    </div>
+                                    <div className='bg-linear-to-tr from-indigo-800 to-indigo-500 col-span-4 text-2xl p-10 flex items-center text-justify font-semibold font-sans'>
+                                        <p>{sitio.info}</p>
+                                    </div>                
+                                </div>
+                            </a>        
+                            
+                            
+                        )
+                    )
+            }
         </>
     )
 }
