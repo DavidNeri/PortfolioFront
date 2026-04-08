@@ -3,11 +3,14 @@ import obtenerInfoFormacion from "../utils/obtenerInfoFormacion"
 
 import useCert from '../hooks/useCert'
 import Modal from "../components/modal"
+import Spin from "../components/Spin"
+
 const Certifies = () => {
 
     const [formaciones, setFormaciones] = useState([]);
     const {setOpen, open} = useCert()
     const [selectedFormation, setSelectedFormation] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
 
@@ -16,6 +19,7 @@ const Certifies = () => {
             try {
                 const InfoFormacion = await obtenerInfoFormacion();
                 setFormaciones(InfoFormacion.certifies);
+                setLoading(false)
                                 
             } catch (error) {
 
@@ -29,6 +33,10 @@ const Certifies = () => {
 
     return (
         <>
+            {
+                loading && <Spin />
+            }
+
             {
                 formaciones.some(f=>f.tipo == 'A') ?
                     <div className="flex flex-col  items-center rounded-xl bg-indigo-700 p-5 shadow-sm shadow-indigo-400 mb-10">
