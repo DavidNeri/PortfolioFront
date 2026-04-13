@@ -2,12 +2,7 @@
 const Button = ({textoBoton, archivo}) => {
   return (
     <button 
-        className="border
-        border-indigo-800 rounded-md p-2
-        bg-indigo-800
-        hover:cursor-pointer
-        hover:bg-indigo-500
-        active:bg-indigo-800"
+        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded hover:cursor-pointer"
     
         onClick={()=>{
             const link = document.createElement('a');

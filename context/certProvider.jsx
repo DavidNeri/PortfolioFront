@@ -10,7 +10,6 @@ const CertProvider = ({children}) => {
             value={{
                 open,
                 setOpen
-
             }}
         >
             {children}

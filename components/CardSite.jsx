@@ -50,9 +50,6 @@ const CardSite = () => {
     }*/
 
     return (
-        
-            
-        
         <>
         {
             loading && <Spin /> 
@@ -62,15 +59,23 @@ const CardSite = () => {
                     sitios.map(                            
                         sitio =>(                    
                             <a key={sitio.id} href={sitio.url} target="_blank" rel="noopener noreferrer">
-                                <div className='grid grid-cols-5 mb-1.5 h-40 overflow-hidden rounded-xl'>
+                                <div className='grid grid-cols-5 mb-1.5 h-40 overflow-hidden rounded-xl 
+                                                hover:shadow-blue-500/20 hover:shadow-md'> 
+
                                     <div className='col-span-1 flex h-full bg-gray-300'>
                                         <img src={`/img/sites/${sitio.id}.png`}
-                                            className='max-w-full max-h-full object-contain'
+                                            className='max-w-full max-h-full object-contain border border-slate-700'
                                         />
                                                 
 
                                     </div>
-                                    <div className='bg-linear-to-tr from-indigo-800 to-indigo-500 col-span-4 text-2xl p-10 flex items-center text-justify font-semibold font-sans'>
+                                    <div className='bg-linear-to-br from-slate-900 to-slate-800 
+                                        col-span-4 text-2xl 
+                                        flex items-center text-justify font-semibold 
+                                        font-sans hover:bg-slate-700 transition
+                                        shadow-lg p-4
+                                        border border-slate-700'>
+
                                         <p>{sitio.info}</p>
                                     </div>                
                                 </div>

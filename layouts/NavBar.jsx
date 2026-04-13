@@ -1,46 +1,49 @@
-import Button from "../components/Button"
 
 const NavBar = () => {
-    return (
-        <nav className="bg-gray-950 fixed  ml-0.5 w-full top-0 border-b border-gray-500 border-default">
-            <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4 text-gray-300 text-md font-semibold font-sans">
 
-                <a href="/formacion" className="flex items-center space-x-3 rtl:space-x-reverse  hover:text-indigo-500 active:text-indigo-800">
-                    <img src="/img/selfie.jpg" className="h-7 rounded-md" alt="David Neri"/>
-                    <span>{'    '} David Neri</span>
-                </a>
 
-                <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse  hover:text-indigo-500 active:text-indigo-800">
-                    <span className="self-center text-2xl text-heading font-semibold whitespace-nowrap ">
-                        Portflio
-                    </span>
-                </a>
+    return (        
+            <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-slate-800/70 backdrop-blur-md border border-slate-700 
+                rounded-xl shadow-lg px-6 py-3 flex justify-between items-center z-50">
                 
+                <h1 className="text-white font-semibold">David Christian Neri</h1>
 
-                <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 space-x-5" >
+                <div className="flex gap-6 text-slate-300">                
+                    <a className="hover:text-white" href="/">Inicio</a>
+                    <a className="hover:text-white" href="/formacion">Certificaciones</a>
+                    <div className="relative group">
+        
+                        <span className="cursor-pointer hover:text-white">
+                                Download
+                        </span>
 
-                    <Button 
-                        textoBoton='Descargar CV'
-                        archivo={{
-                            url:'/pdf/David Christian Neri - Curriculum Vitae.pdf',
-                            nombre:'David Christian Neri - Curriculum Vitae.pdf'  
-                        }}
-                    />   
-                        
-                    <Button 
-                        textoBoton='Download Resume'
-                        archivo={{
-                            url: '/pdf/David Christian Neri - Resume.pdf',
-                            nombre:'David Christian Neri - Resume.pdf'
-                        }}                        
-                    />                     
-                    
+                        <ul
+                            className="absolute left-0 mt-2 w-48 bg-slate-800 border border-slate-700
+                            rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100
+                            group-hover:visible transition-all duration-200">
+
+                            <li>
+                                <a href="/pdf/David Christian Neri - Curriculum Vitae.pdf"
+                                    download='David Christian Neri - Curriculum Vitae.pdf' 
+                                    className="block px-4 py-2 hover:bg-slate-700">
+                                    Curriculum Vitae
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/pdf/David Christian Neri - Resume.pdf"
+                                    download='David Christian Neri - Resume'
+                                    className="block px-4 py-2 hover:bg-slate-700">
+                                    Resume
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-
-            </div>
-        </nav>
-
-    )
+            </nav>
+            
+        )
 }
 
 export default NavBar

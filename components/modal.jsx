@@ -17,8 +17,11 @@ const Modal = ({certificado}) => {
     
     return ( 
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-40"
-            onClick={()=>{
-                setOpen(false)
+            onClick={(e)=>{
+                if(e.target === e.currentTarget){
+                    setOpen(false)
+                }
+                
             }}
         >
 
@@ -42,7 +45,7 @@ const Modal = ({certificado}) => {
 
                 }
 
-                <footer className='bg-gray-900 rounded-b-lg p-5 border-gray-200 border-8 text-white'>
+                <footer className='bg-slate-900 rounded-b-lg p-5 border-gray-200 border-8 text-white'>
                     <p className='text-lg'><span className='font-semibold'>Nombre: </span>{certificado.nombre} </p>
                     <p className='text-lg'><span className='font-semibold'>Entidad emisora: </span>{certificado.entidad} </p>
 
