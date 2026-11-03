@@ -57,29 +57,47 @@ const CardSite = () => {
             {
                 
                     sitios.map(                            
-                        sitio =>(                    
-                            <a key={sitio.id} href={sitio.url} target="_blank" rel="noopener noreferrer">
-                                <div className='grid grid-cols-5 mb-1.5 h-40 overflow-hidden rounded-xl 
-                                                hover:shadow-blue-500/20 hover:shadow-md'> 
+                        sitio =>(   
+                            
+                            
+                                <a key={sitio.id} href={sitio.url} target="_blank" rel="noopener noreferrer">
+                                <div className='mb-1.5 mt
+                                    w-[300px]
+                                    h-[450px] 
+                                    overflow-hidden
+                                    rounded-md 
+                                    border border-slate-700
+                                    hover:shadow-blue-500/20 hover:shadow-md
+                                    hover:bg-slate-700 transition'> 
 
-                                    <div className='col-span-1 flex h-full bg-gray-300'>
-                                        <img src={`/img/sites/${sitio.id}.png`}
-                                            className='max-w-full max-h-full object-contain border border-slate-700'
+                                    <figure className='h-3/5  bg-slate-800/70 backdrop-blur-md  border-b-slate-700'>
+
+                                        <img src={`/img/cards/${sitio.bg__image}.png`}
+                                            className='
+                                            
+                                            rounded-t-md
+                                            object-center
+                                            object-contain
+                                            h-full
+                                            w-full
+                                            '
                                         />
                                                 
 
-                                    </div>
-                                    <div className='bg-linear-to-br from-slate-900 to-slate-800 
-                                        col-span-4 text-2xl 
-                                        flex items-center text-justify font-semibold 
-                                        font-sans hover:bg-slate-700 transition
-                                        shadow-lg p-4
-                                        border border-slate-700'>
+                                    </figure>
 
+                                    
+                                    <div className='h-100                                         
+                                        text-center
+                                        font-sans 
+                                        shadow-lg p-4
+                                        '>
                                         <p>{sitio.info}</p>
                                     </div>                
                                 </div>
-                            </a>        
+                                </a>        
+                            
+                            
                             
                             
                         )

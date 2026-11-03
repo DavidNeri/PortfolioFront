@@ -5,7 +5,7 @@ const MainLayouth = () => {
     return (
         <>
             <NavBar />
-            <main className="mt-30 ml-50 mr-50 p-10">
+            <main className="mt-30">
                 <Outlet />            
             </main>
         </>
